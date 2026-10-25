@@ -1,0 +1,28 @@
+{
+  "npsi_xgboost": {
+    "tag": "npsi_xgboost",
+    "n_test": 3000,
+    "positive_rate_test": 0.09633333333333334,
+    "precision": 0.9568965517241379,
+    "recall": 0.7681660899653979,
+    "f1": 0.8522072936660269,
+    "false_positive_rate": 0.0036886757654002213,
+    "n_events": 14,
+    "event_detection_recall": 1.0,
+    "mean_lead_time_s": 0.10428571428571431,
+    "median_lead_time_s": 0.09
+  },
+  "flow_baseline_xgboost": {
+    "tag": "flow_baseline_xgboost",
+    "n_test": 241,
+    "positive_rate_test": 0.06224066390041494,
+    "precision": 1.0,
+    "recall": 0.06666666666666667,
+    "f1": 0.125,
+    "false_positive_rate": 0.0,
+    "n_events": 14,
+    "event_detection_recall": 0.07142857142857142,
+    "mean_lead_time_s": 0.25,
+    "median_lead_time_s": 0.25
+  }
+}

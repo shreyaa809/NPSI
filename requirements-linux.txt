@@ -1,0 +1,18 @@
+# Extra dependencies for the REAL deployment path (Linux only -- eBPF, Mininet,
+# Open vSwitch, os-ken). Install these inside WSL2 or a Linux VM; see
+# docs/linux_deployment.md for the full setup (including apt packages that
+# cannot be installed via pip: mininet, openvswitch-switch, bpfcc-tools).
+-r requirements.txt
+
+# os-ken, NOT ryu: upstream `ryu` (last released 2019) is unmaintained and its
+# setup.py / ryu.app.wsgi both depend on OpenStack oslo.config internals that
+# no longer exist in any installable oslo.config release (verified while
+# setting up this project's WSL2 validation environment -- ryu fails to
+# build under modern pip/setuptools, and even forcing an install leaves
+# `from oslo.config import cfg` broken). os-ken is the actively maintained
+# OpenStack-Neutron fork of the same framework; see the module docstring in
+# npsi/control/ryu_app.py for the API differences this project worked around
+# (no ryu.app.wsgi, no ryu-manager console script in the PyPI build).
+os-ken>=2.0
+requests>=2.31
+bcc  # python bindings for BPF Compiler Collection -- install via apt (python3-bpfcc), NOT pip; listed here for reference only

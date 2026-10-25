@@ -1,0 +1,13 @@
+# Core stack -- works on Windows/macOS/Linux, powers the simulation-mode
+# demo (npsi/sim/sim_e2e.py) and all unit tests.
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+matplotlib>=3.8
+networkx>=3.2
+pytest>=8.0
+
+# Optional: enables the LSTM variant in npsi/ml/lstm_model.py. Training and
+# evaluation work fine without it (train.py detects its absence and skips
+# the LSTM step). CPU-only wheel is sufficient for this project's model size.
+# torch>=2.2
